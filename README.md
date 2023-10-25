@@ -1,7 +1,8 @@
-# PCA-Matrix-summation-with-a-2D-grid-and-2D-blocks.-Adapt-it-to-integer-matrix-addition.-
+# PCA Matrix summation with a 2D grid and 2D blocks. Adapt it to integer matrix addition.
 
 ## Aim:
 To implement Matrix summation with 2D grids and blocks.
+
 ## Procedure:
 1. Initialize matrix sizes (nx and ny)
 2. Allocate memory on the host and initialize data
@@ -12,7 +13,12 @@ To implement Matrix summation with 2D grids and blocks.
 7. Verify and compare the results between the host and GPU
 8. Free allocated memory
 9. Reset the GPU device
+
 ## Program:
+```
+Developed by: Keerthika N
+Register No: 212221230049
+```
 ### Float Matrix Addition
 ```c
 #include "../common/common.h"
@@ -362,7 +368,7 @@ int main(int argc, char **argv)
 ```
 
 ## Output:
-![image](https://github.com/Shavedha/PCA-Matrix-summation-with-a-2D-grid-and-2D-blocks.-Adapt-it-to-integer-matrix-addition.-/assets/93427376/04345337-52f1-4b98-bed2-668a5c0de489)
+![2](https://github.com/KeerthikaNagarajan/PCA-Matrix-summation-with-a-2D-grid-and-2D-blocks.-Adapt-it-to-integer-matrix-addition.-/assets/93427089/f9da0c97-9a19-46f0-88d9-69415da56074)
 
 
 ## Result:
