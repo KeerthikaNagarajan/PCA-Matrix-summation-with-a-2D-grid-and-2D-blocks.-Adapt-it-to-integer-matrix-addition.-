@@ -1,26 +1,22 @@
-# PCA Matrix summation with a 2D grid and 2D blocks. Adapt it to integer matrix addition.
+# EXPERIMENT 02: MATRIX SUMMATION WITH A 2D GRID AND 2D BLOCKS. ADAPT IT TO INTEGER MATRIX ADDITION.
+## AIM:
+To perform matrix summation using 2D grids and 2D blocks.
+## PROCEDURE:
+1. Initialize matrix sizes (nx and ny), allocate host memory, and initialize data.
+2. Allocate device memory and transfer data from the host to the device.
+3. Configure the grid and block dimensions for the GPU kernel.
+4. Launch the GPU kernel (sumMatrixOnGPU2D) to perform matrix addition.
+5. Copy the GPU results back to the host.
+6. Check and compare the results between the host and GPU.
+7. Free allocated memory and reset the GPU device.
 
-## Aim:
-To implement Matrix summation with 2D grids and blocks.
-
-## Procedure:
-1. Initialize matrix sizes (nx and ny)
-2. Allocate memory on the host and initialize data
-3. Allocate memory on the device and transfer data from the host to the device
-4. Configure grid and block dimensions for the GPU kernel
-5. Launch the GPU kernel (sumMatrixOnGPU2D) to perform matrix addition
-6. Copy the GPU results back to the host
-7. Verify and compare the results between the host and GPU
-8. Free allocated memory
-9. Reset the GPU device
-
-## Program:
+## PROGRAM:
 ```
 Developed by: Keerthika N
 Register No: 212221230049
 ```
-### Float Matrix Addition
-```c
+### Float Matrix Addition:
+``` cuda
 #include "../common/common.h"
 #include <cuda_runtime.h>
 #include <stdio.h>
@@ -193,9 +189,9 @@ int main(int argc, char **argv)
 }
 
 ```
-### Integer Matrix Addition
-```c
-#include "common.h"
+### Integer Matrix Addition:
+``` cuda
+#include "../common/common.h"
 #include <cuda_runtime.h>
 #include <stdio.h>
 
@@ -287,8 +283,8 @@ int main(int argc, char **argv)
     CHECK(cudaSetDevice(dev));
 
     // set up data size of matrix
-    int nx = 1 << 3;
-    int ny = 1 << 3;
+    int nx = 1 << 14;
+    int ny = 1 << 14;
 
     int nxy = nx * ny;
     int nBytes = nxy * sizeof(int);
@@ -366,10 +362,11 @@ int main(int argc, char **argv)
     return (0);
 }
 ```
+## OUTPUT:
+### Float Matrix Addition:
+![image](https://github.com/Rithigasri/Parallel-Computing-Architecture/assets/93427256/28c10ec0-b299-4f1f-946b-022f14baea3a)
+### Integer Matrix Addition:
+![image](https://github.com/Rithigasri/Parallel-Computing-Architecture/assets/93427256/907d2b87-5792-4ccb-a2ec-b3531c727789)
 
-## Output:
-![2](https://github.com/KeerthikaNagarajan/PCA-Matrix-summation-with-a-2D-grid-and-2D-blocks.-Adapt-it-to-integer-matrix-addition.-/assets/93427089/f9da0c97-9a19-46f0-88d9-69415da56074)
-
-
-## Result:
-Thus, matrix summation using 2D grids and 2D blocks has been performed successfully.
+## RESULT:
+Since, we decreased the number of elements we couldn't get much difference in the execution time of the GPU.However, float variables in the GPU will result in the best possible result. Thus, matrix summation using 2D grids and 2D blocks has been performed successfully.
